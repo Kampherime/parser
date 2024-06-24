@@ -1,8 +1,10 @@
+import sys
+
 def main():
-    with open("./books/frankenstein.txt") as f:
+    with open(sys.argv[1]) as f:
         word_list = split_file(f)
         word_count = get_wc(word_list)
-        gen_report(create_dict(word_list), word_count, "Frankenstein")
+        gen_report(create_dict(word_list), word_count, sys.argv[1])
 
 def create_dict(word_list):
     book_string = " ".join(word_list)
